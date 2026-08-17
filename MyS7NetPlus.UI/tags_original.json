@@ -1,0 +1,243 @@
+[
+  {
+    "Name": "西门子 S7 1200 plc",
+    "Protocol": 0,
+    "IpAddress": "192.168.71.50",
+    "Port": 102,
+    "GroupList": [
+      {
+        "Name": "实时数据组",
+        "StartAddress": "DB1.DBB2",
+        "ByteCount": 26,
+        "TagList": [
+          {
+            "Name": "温度0",
+            "ValueType": "Int16",
+            "StartAddress": "DB1.DBW2",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "温度1",
+            "ValueType": "Int16",
+            "StartAddress": "DB1.DBW4",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "温度2",
+            "ValueType": "Int16",
+            "StartAddress": "DB1.DBW6",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "温度3",
+            "ValueType": "Int16",
+            "StartAddress": "DB1.DBW8",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "湿度0",
+            "ValueType": "Single",
+            "StartAddress": "DB1.DBD10",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "湿度1",
+            "ValueType": "Single",
+            "StartAddress": "DB1.DBD14",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "压力0",
+            "ValueType": "SByte",
+            "StartAddress": "DB1.DBB18",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "压力1",
+            "ValueType": "SByte",
+            "StartAddress": "DB1.DBB19",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "能量0",
+            "ValueType": "Int32",
+            "StartAddress": "DB1.DBD20",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          },
+          {
+            "Name": "能量1",
+            "ValueType": "Int32",
+            "StartAddress": "DB1.DBD24",
+            "NeedToMonitor": true,
+            "HighThreshold": 80,
+            "HighDeadBand": 5,
+            "LowThreshold": 20,
+            "LowDeadBand": 5
+          }
+        ]
+      },
+      {
+        "Name": "状态数据组",
+        "StartAddress": "DB1.DBB0",
+        "ByteCount": 1,
+        "TagList": [
+          {
+            "Name": "状态0",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.0",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态1",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.1",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态2",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.2",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态3",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.3",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态4",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.4",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态5",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.5",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态6",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.6",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "状态7",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX0.7",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          }
+        ]
+      },
+      {
+        "Name": "开关数据组",
+        "StartAddress": "DB1.DBB1",
+        "ByteCount": 1,
+        "TagList": [
+          {
+            "Name": "开关0",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.0",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关1",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.1",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关2",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.2",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关3",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.3",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关4",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.4",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关5",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.5",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关6",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.6",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          },
+          {
+            "Name": "开关7",
+            "ValueType": "Boolean",
+            "StartAddress": "DB1.DBX1.7",
+            "NeedToMonitor": true,
+            "BooleanThreshold": true
+          }
+        ]
+      }
+    ]
+  }
+]

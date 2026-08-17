@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MyS7NetPlus.Common/MyS7NetPlus.Common.csproj" />
+  <Project Path="MyS7NetPlus.UI/MyS7NetPlus.UI.csproj" />
+</Solution>
