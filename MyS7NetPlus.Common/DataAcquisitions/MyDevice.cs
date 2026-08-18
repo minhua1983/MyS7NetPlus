@@ -1,8 +1,8 @@
-﻿using MyS7NetPlus.Common.Communication;
-using MyS7NetPlus.Common.Tool;
+﻿using MyS7NetPlus.Common.Communications;
+using MyS7NetPlus.Common.Tools;
 using Newtonsoft.Json;
 
-namespace MyS7NetPlus.Common.DataAcquisition
+namespace MyS7NetPlus.Common.DataAcquisitions
 {
     public class MyDevice
     {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MyS7NetPlus.Common.Tool;
+using MyS7NetPlus.Common.Tools;
 using NLog;
 using NLog.Web;
 using System.Collections.Concurrent;

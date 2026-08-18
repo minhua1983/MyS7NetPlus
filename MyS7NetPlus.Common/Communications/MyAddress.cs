@@ -1,7 +1,7 @@
 ﻿using S7.Net;
 using System.Text.RegularExpressions;
 
-namespace MyS7NetPlus.Common.Communication
+namespace MyS7NetPlus.Common.Communications
 {
     public class MyAddress
     {

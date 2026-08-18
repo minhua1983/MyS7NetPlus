@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyS7NetPlus.Common.DataAcquisition
+namespace MyS7NetPlus.Common.DataAcquisitions
 {
     public class MyTag : INotifyPropertyChanged
     {

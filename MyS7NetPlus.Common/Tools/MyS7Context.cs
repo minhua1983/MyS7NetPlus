@@ -1,12 +1,12 @@
-﻿using MyS7NetPlus.Common.Communication;
-using MyS7NetPlus.Common.DataAcquisition;
+﻿using MyS7NetPlus.Common.Communications;
+using MyS7NetPlus.Common.DataAcquisitions;
 using NLog;
 using S7.Net;
 using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace MyS7NetPlus.Common.Tool
+namespace MyS7NetPlus.Common.Tools
 {
     //public class MyS7Context : IDisposable, INotifyPropertyChanged    //不推荐这种方式，winform UI的已入库label会卡，不流畅，且关闭winform时，已入库label和已采集label瞬间不动了了，体验没CollectedTagLogCountChanged和PersistedTagLogCountChanged事件流畅
     public class MyS7Context : IDisposable

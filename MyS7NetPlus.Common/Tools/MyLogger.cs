@@ -6,7 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyS7NetPlus.Common.Tool
+namespace MyS7NetPlus.Common.Tools
 {
     public class MyLogger
     {

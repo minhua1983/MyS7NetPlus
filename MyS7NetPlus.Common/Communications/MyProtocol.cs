@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyS7NetPlus.Common.Communication
+namespace MyS7NetPlus.Common.Communications
 {
     public enum MyProtocol
     {

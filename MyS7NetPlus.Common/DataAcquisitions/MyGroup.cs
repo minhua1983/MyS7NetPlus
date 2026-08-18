@@ -2,7 +2,7 @@
 using S7.Net;
 using System.ComponentModel;
 
-namespace MyS7NetPlus.Common.DataAcquisition
+namespace MyS7NetPlus.Common.DataAcquisitions
 {
     public class MyGroup
     {

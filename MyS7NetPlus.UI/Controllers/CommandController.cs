@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using MyS7NetPlus.Common.DataAcquisition;
-using MyS7NetPlus.Common.Tool;
+using MyS7NetPlus.Common.DataAcquisitions;
+using MyS7NetPlus.Common.Tools;
 using NLog;
 using Newtonsoft.Json;
 using System.Collections.Concurrent;

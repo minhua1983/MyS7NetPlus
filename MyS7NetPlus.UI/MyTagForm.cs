@@ -1,5 +1,5 @@
-﻿using MyS7NetPlus.Common.DataAcquisition;
-using MyS7NetPlus.Common.Tool;
+﻿using MyS7NetPlus.Common.DataAcquisitions;
+using MyS7NetPlus.Common.Tools;
 using MyS7NetPlus.UI.Models;
 using MyS7NetPlus.UI.Services;
 using NLog;

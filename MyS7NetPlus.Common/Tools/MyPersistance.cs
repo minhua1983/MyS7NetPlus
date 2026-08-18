@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyS7NetPlus.Common.Tool
+namespace MyS7NetPlus.Common.Tools
 {
     public class MyPersistance
     {
