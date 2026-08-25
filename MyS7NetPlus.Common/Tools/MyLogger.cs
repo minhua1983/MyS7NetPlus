@@ -26,7 +26,8 @@ namespace MyS7NetPlus.Common.Tools
         public void Log(LogLevel logLevel, string messsage, Exception? e = null)
         {
             _logger.Log(logLevel, messsage, e);
-            if (logLevel.Ordinal >= 3) {
+            if (logLevel.Ordinal >= 3)
+            {
                 OnLogged(new()
                 {
                     LogLevel = logLevel,

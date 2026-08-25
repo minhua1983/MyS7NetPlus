@@ -336,7 +336,7 @@ namespace MyS7NetPlus.UI
                     // _myModbusContext÷¥––DisconnectAsync
                     foreach (var myS7Context in _myS7ContextList)
                     {
-                        await myS7Context.Disconnect();
+                        await myS7Context.DisconnectAsync();
                     }
 
                     if (_cts != null && !_cts.IsCancellationRequested)

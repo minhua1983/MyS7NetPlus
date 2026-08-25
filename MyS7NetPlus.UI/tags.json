@@ -4,7 +4,7 @@
     "Name": "西门子 S7 1200 plc",
     "Description": null,
     "Protocol": 0,
-    "IpAddress": "192.168.71.50",
+    "IpAddress": "192.168.71.59",
     "Port": 102,
     "GroupList": [
       {

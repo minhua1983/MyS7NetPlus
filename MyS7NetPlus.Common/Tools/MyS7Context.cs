@@ -24,7 +24,7 @@ namespace MyS7NetPlus.Common.Tools
         Task _collectTask;
         Task _sendTask;
 
-        bool _isPlcOffline = false;
+        bool _isDeviceOffline = false;
         int _maxErrorTimes = 5;
         int _currentErrorTimes = 0;
         int _dataAcquisitionInterval = 100;
@@ -134,7 +134,7 @@ namespace MyS7NetPlus.Common.Tools
             _myLogger.Log(LogLevel.Warn, "启动_sendTask任务");
         }
 
-        public async Task Disconnect()
+        public async Task DisconnectAsync()
         {
             if (_cts != null && !_cts.IsCancellationRequested)
             {
@@ -220,7 +220,7 @@ namespace MyS7NetPlus.Common.Tools
         {
             while (!_cts.IsCancellationRequested)
             {
-                if (!_isPlcOffline)
+                if (!_isDeviceOffline)
                 {
                     // plc is online
                     try
@@ -305,7 +305,7 @@ namespace MyS7NetPlus.Common.Tools
                         _myLogger.Log(LogLevel.Error, $"批量读取数据出错（{ex.Message}），连续错误次数 {_currentErrorTimes}/{_maxErrorTimes}", ex);
                         if (_currentErrorTimes >= _maxErrorTimes)
                         {
-                            _isPlcOffline = true;
+                            _isDeviceOffline = true;
                             _myLogger.Log(LogLevel.Info, "连续出错次数到达上线，判定plc离线");
                         }
                     }
@@ -326,7 +326,7 @@ namespace MyS7NetPlus.Common.Tools
                     _plc = new Plc(CpuType.S71200, _myDevice!.IpAddress, 0, 1);
                     _plc.Open();
                     _myLogger.Log(LogLevel.Warn, "开打plc连接");
-                    _isPlcOffline = false;
+                    _isDeviceOffline = false;
                 }
             }
         }

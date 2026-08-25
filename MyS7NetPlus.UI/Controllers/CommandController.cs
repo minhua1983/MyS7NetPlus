@@ -35,7 +35,7 @@ namespace MyS7NetPlus.UI.Controllers
             MyS7Task myS7Task = new()
             {
                 MyS7TaskType = MyS7TaskType.WriteAsync,
-                IpAddress = "192.168.71.50",
+                IpAddress = "192.168.71.59",
                 //TaskCompletionSource = new(),
                 StartAddress = "DB1.DBD10",
                 ValueType = "Single",
@@ -55,7 +55,7 @@ namespace MyS7NetPlus.UI.Controllers
             MyS7Task myS7Task = new()
             {
                 MyS7TaskType = MyS7TaskType.ReadTagsFromMemory,
-                IpAddress = "192.168.71.50",
+                IpAddress = "192.168.71.59",
                 //TaskCompletionSource = new(),
             };
 
@@ -72,7 +72,7 @@ namespace MyS7NetPlus.UI.Controllers
             MyS7Task myS7Task = new()
             {
                 MyS7TaskType = MyS7TaskType.ReadAsync,
-                IpAddress = "192.168.71.50",
+                IpAddress = "192.168.71.59",
                 //TaskCompletionSource = new(),
                 StartAddress = "DB1.DBD10",
                 ValueType = "Single",
