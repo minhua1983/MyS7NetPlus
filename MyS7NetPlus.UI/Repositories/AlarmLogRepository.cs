@@ -28,7 +28,7 @@ namespace MyS7NetPlus.UI.Repositories
         {
             var transaction = _connection.BeginTransaction();
 
-            alarmLogList.ForEach(tagLog => _connection.Execute("INSERT INTO AlarmLog(DeviceName, GroupName, TagName, TagValue, IsNoticed, IsAlarmed, Message, Duration, TriggeredAt) VALUES(@DeviceName, @GroupName, @TagName, @TagValue, @IsNoticed, @IsAlarmed, @Message, @Duration, @TriggeredAt)", alarmLogList, transaction));
+            alarmLogList.ForEach(alarmLog => _connection.Execute("INSERT INTO AlarmLog(DeviceName, GroupName, TagName, TagValue, IsNoticed, IsAlarmed, Message, Duration, TriggeredAt) VALUES(@DeviceName, @GroupName, @TagName, @TagValue, @IsNoticed, @IsAlarmed, @Message, @Duration, @TriggeredAt)", alarmLog, transaction));
 
             transaction.Commit();
         }
