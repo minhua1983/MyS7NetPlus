@@ -428,12 +428,23 @@ namespace MyS7NetPlus.UI
             lv_log_message.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
+        private async void btn_disconnect_Click(object sender, EventArgs e)
+        {
+            btn_connect.Enabled = true;
+            btn_disconnect.Enabled = false;
+
+            foreach (var _myS7Context in _myS7ContextList)
+            {
+                await _myS7Context.DisconnectAsync();
+            }
+        }
+
         private async void btn_connect_Click(object sender, EventArgs e)
         {
             /*
             var ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.ToString();
             var plc = new Plc(CpuType.S71200, ip!, 0, 1);
-            //var plc = new Plc(CpuType.S71200, "192.168.71.36", 0, 1);
+            //var plc = new Plc(CpuType.S71200, MyS7Context.GetLocalIp(), 0, 1);
             try
             {
                 plc.Open();
@@ -507,6 +518,7 @@ namespace MyS7NetPlus.UI
             }
             //*/
             btn_connect.Enabled = false;
+            btn_disconnect.Enabled = true;
             _myS7ContextList.ForEach(myS7Context =>
             {
                 myS7Context.Connect();

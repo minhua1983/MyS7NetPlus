@@ -4,6 +4,7 @@ using NLog;
 using S7.Net;
 using System.Collections.Concurrent;
 using System.ComponentModel;
+using System.Net.NetworkInformation;
 using System.Reflection;
 
 namespace MyS7NetPlus.Common.Tools
@@ -83,6 +84,16 @@ namespace MyS7NetPlus.Common.Tools
             Initialize();
         }
 
+        public static string GetLocalIp()
+        {
+            return NetworkInterface.GetAllNetworkInterfaces()
+                .Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                .SelectMany(nic => nic.GetIPProperties().UnicastAddresses)
+                .Where(addr => addr.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                .Select(a => a.Address.ToString())
+                .ToList().FirstOrDefault() ?? "127.0.0.1";
+        }
+
         //protected virtual void OnPropertyChanged(string propertyName)
         //{
         //    PropertyChanged?.Invoke(this, new(propertyName));
@@ -112,7 +123,8 @@ namespace MyS7NetPlus.Common.Tools
             {
                 _myLogger.Log(LogLevel.Info, "tags.json数据加载成功");
                 // init plc
-                _plc = new Plc(CpuType.S71200, _myDevice!.IpAddress, 0, 1);
+                //_plc = new Plc(CpuType.S71200, _myDevice!.IpAddress, 0, 1);
+                _plc = new Plc(CpuType.S71200, GetLocalIp(), 0, 1);
                 _myLogger.Log(LogLevel.Info, "初始化plc成功");
 
                 // init cts
@@ -122,6 +134,7 @@ namespace MyS7NetPlus.Common.Tools
 
         public void Connect()
         {
+            _cts = new();
             _plc.Open();
             _myLogger.Log(LogLevel.Warn, "打开plc连接");
 

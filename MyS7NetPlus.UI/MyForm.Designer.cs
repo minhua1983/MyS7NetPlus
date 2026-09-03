@@ -39,6 +39,7 @@
             lbl_persisted_tag_log_count = new Label();
             lbl_collected_tag_log_count = new Label();
             lbl_persist_collect_rate = new Label();
+            btn_disconnect = new Button();
             tc_groups.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             btn_connect.Name = "btn_connect";
             btn_connect.Size = new Size(94, 29);
             btn_connect.TabIndex = 0;
-            btn_connect.Text = "连接";
+            btn_connect.Text = "连接设备";
             btn_connect.UseVisualStyleBackColor = true;
             btn_connect.Click += btn_connect_Click;
             // 
@@ -109,7 +110,7 @@
             // lbl_persisted_tag_log_count
             // 
             lbl_persisted_tag_log_count.AutoSize = true;
-            lbl_persisted_tag_log_count.Location = new Point(231, 9);
+            lbl_persisted_tag_log_count.Location = new Point(353, 9);
             lbl_persisted_tag_log_count.Name = "lbl_persisted_tag_log_count";
             lbl_persisted_tag_log_count.RightToLeft = RightToLeft.No;
             lbl_persisted_tag_log_count.Size = new Size(18, 20);
@@ -120,7 +121,7 @@
             // lbl_collected_tag_log_count
             // 
             lbl_collected_tag_log_count.AutoSize = true;
-            lbl_collected_tag_log_count.Location = new Point(231, 29);
+            lbl_collected_tag_log_count.Location = new Point(353, 29);
             lbl_collected_tag_log_count.Name = "lbl_collected_tag_log_count";
             lbl_collected_tag_log_count.Size = new Size(18, 20);
             lbl_collected_tag_log_count.TabIndex = 8;
@@ -130,17 +131,29 @@
             // lbl_persist_collect_rate
             // 
             lbl_persist_collect_rate.AutoSize = true;
-            lbl_persist_collect_rate.Location = new Point(141, 16);
+            lbl_persist_collect_rate.Location = new Point(263, 16);
             lbl_persist_collect_rate.Name = "lbl_persist_collect_rate";
             lbl_persist_collect_rate.Size = new Size(84, 20);
             lbl_persist_collect_rate.TabIndex = 9;
             lbl_persist_collect_rate.Text = "入库采集比";
+            // 
+            // btn_disconnect
+            // 
+            btn_disconnect.Enabled = false;
+            btn_disconnect.Location = new Point(112, 12);
+            btn_disconnect.Name = "btn_disconnect";
+            btn_disconnect.Size = new Size(94, 29);
+            btn_disconnect.TabIndex = 10;
+            btn_disconnect.Text = "断开设备";
+            btn_disconnect.UseVisualStyleBackColor = true;
+            btn_disconnect.Click += btn_disconnect_Click;
             // 
             // MyForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 713);
+            Controls.Add(btn_disconnect);
             Controls.Add(lbl_persist_collect_rate);
             Controls.Add(lbl_collected_tag_log_count);
             Controls.Add(lbl_persisted_tag_log_count);
@@ -167,5 +180,6 @@
         private Label lbl_persisted_tag_log_count;
         private Label lbl_collected_tag_log_count;
         private Label lbl_persist_collect_rate;
+        private Button btn_disconnect;
     }
 }

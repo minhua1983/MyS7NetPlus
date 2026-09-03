@@ -147,7 +147,7 @@ namespace MyS7NetPlus.UI
         {
             using SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "CSV文件(*.csv)|*.csv";
-            saveFileDialog.FileName = $"Alarm_{System.DateTime.Now:yyyyMMdd_HHmmss}.csv";
+            saveFileDialog.FileName = $"AlarmLog_{System.DateTime.Now.AddHours(-24):yyyyMMddHHmmss}_{System.DateTime.Now:yyyyMMddHHmmss}.csv";
             if (saveFileDialog.ShowDialog() != DialogResult.OK)
                 return;
 
