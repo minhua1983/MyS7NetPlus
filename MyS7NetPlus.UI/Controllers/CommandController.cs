@@ -36,7 +36,7 @@ namespace MyS7NetPlus.UI.Controllers
             {
                 MyS7TaskType = MyS7TaskType.WriteAsync,
                 IpAddress = MyS7Context.GetLocalIp(),
-                //TaskCompletionSource = new(),
+                //TaskCompletionSource = new(TaskCreationOptions.RunContinuationsAsynchronously),
                 StartAddress = "DB1.DBD10",
                 ValueType = "Single",
                 Value = -45.67f
@@ -56,7 +56,7 @@ namespace MyS7NetPlus.UI.Controllers
             {
                 MyS7TaskType = MyS7TaskType.ReadTagsFromMemory,
                 IpAddress = MyS7Context.GetLocalIp(),
-                //TaskCompletionSource = new(),
+                //TaskCompletionSource = new(TaskCreationOptions.RunContinuationsAsynchronously),
             };
 
             var result = (MyDevice)await MyS7Context.GetMyS7TaskResult(_globalSendQueue, myS7Task, HttpContext.RequestAborted);
@@ -73,7 +73,7 @@ namespace MyS7NetPlus.UI.Controllers
             {
                 MyS7TaskType = MyS7TaskType.ReadAsync,
                 IpAddress = MyS7Context.GetLocalIp(),
-                //TaskCompletionSource = new(),
+                //TaskCompletionSource = new(TaskCreationOptions.RunContinuationsAsynchronously),
                 StartAddress = "DB1.DBD10",
                 ValueType = "Single",
             };

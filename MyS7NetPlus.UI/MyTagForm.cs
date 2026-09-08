@@ -253,7 +253,7 @@ namespace MyS7NetPlus.UI
                     {
                         MyS7TaskType = MyS7TaskType.WriteAsync,
                         IpAddress = _myTag.MyGroup.MyDevice.IpAddress,
-                        //TaskCompletionSource = new(),
+                        //TaskCompletionSource = new(TaskCreationOptions.RunContinuationsAsynchronously),
                         StartAddress = _myTag.StartAddress,
                         ValueType = _myTag.ValueType,
                         Value = value

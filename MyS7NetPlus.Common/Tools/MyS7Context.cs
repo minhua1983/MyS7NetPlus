@@ -189,7 +189,7 @@ namespace MyS7NetPlus.Common.Tools
 
         public static async Task<object> GetMyS7TaskResult(ConcurrentQueue<MyS7Task> sendQueue, MyS7Task myS7Task, CancellationToken? cancellationToken = null)
         {
-            TaskCompletionSource<object> tcs = new();
+            TaskCompletionSource<object> tcs = new(TaskCreationOptions.RunContinuationsAsynchronously);
             CancellationTokenSource cts = new(2000);
 
             var externalCancellationToken = cancellationToken ?? CancellationToken.None;
@@ -201,7 +201,7 @@ namespace MyS7NetPlus.Common.Tools
 
             var ctr = cts.Token.Register(() =>
             {
-                tcs.SetException(new TimeoutException());
+                tcs.TrySetException(new TimeoutException());
                 //cts.Dispose();
             });
 
@@ -249,11 +249,11 @@ namespace MyS7NetPlus.Common.Tools
                             byte[] bytes = null;
 
                             /*
-                            TaskCompletionSource<object> tcs = new();
+                            TaskCompletionSource<object> tcs = new(TaskCreationOptions.RunContinuationsAsynchronously);
                             CancellationTokenSource cts = new(2000);
                             var ctr = cts.Token.Register(() =>
                             {
-                                tcs.SetException(new TimeoutException());
+                                tcs.TrySetException(new TimeoutException());
                                 //cts.Dispose();
                             });
 
@@ -608,12 +608,12 @@ namespace MyS7NetPlus.Common.Tools
                             result = await _plc.ReadBytesAsync(myAddress!.DataType, myAddress.DbIndex, myAddress.ByteOffset, myS7Task.ByteCount);
                         }
 
-                        myS7Task.TaskCompletionSource.SetResult(result);
+                        myS7Task.TaskCompletionSource.TrySetResult(result);
                     }
                     catch (Exception ex)
                     {
                         _myLogger.Log(LogLevel.Error, $"错误:{ex.Message}", ex);
-                        //myS7Task.TaskCompletionSource.SetException(ex);
+                        //myS7Task.TaskCompletionSource.TrySetException(ex);
                     }
                 }
 
