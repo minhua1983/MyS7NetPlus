@@ -14,7 +14,7 @@ namespace MyS7NetPlus.UI
 {
     public partial class MyForm : Form
     {
-        bool _isAllDoneBeforeFormClosing = false;
+        bool _isCleanedUp = false;
 
         MyForm _myFormInstance;
         MyLogger _myLogger;
@@ -320,7 +320,7 @@ namespace MyS7NetPlus.UI
 
         private async void MyForm_FormClosing(object? sender, FormClosingEventArgs e)
         {
-            if (!_isAllDoneBeforeFormClosing)
+            if (!_isCleanedUp)
             {
                 try
                 {
@@ -375,7 +375,7 @@ namespace MyS7NetPlus.UI
                     await streamWriter.WriteAsync(JsonConvert.SerializeObject(myDeviceList));
 
                     // 标记为所有任务都处理完
-                    _isAllDoneBeforeFormClosing = true;
+                    _isCleanedUp = true;
 
                     //这个方法会再次触发Form1_FormClosing
                     this.Close();
